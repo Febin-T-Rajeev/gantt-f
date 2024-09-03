@@ -1,0 +1,24 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .table td[colspan="6"] {
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+  .table td:last-child {
+    background-color: #e6f7ff;
+  }
+  

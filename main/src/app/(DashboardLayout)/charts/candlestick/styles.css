@@ -1,0 +1,81 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0;
+}
+
+.gantt-chart {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.gantt-header, .gantt-row {
+    display: flex;
+    width: 100%;
+}
+
+.gantt-header {
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.gantt-date, .gantt-time, .gantt-summary, .gantt-bars {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.gantt-date, .gantt-summary {
+    flex: 0 0 100px; /* Fixed width for date and summary columns */
+    min-width: 100px;
+}
+
+.gantt-bars {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    align-items: center; /* Center the boxes vertically */
+}
+
+.gantt-time {
+    flex: 1; /* Allow time columns to grow */
+    min-width: 50px; /* Minimum width for time columns */
+}
+
+.gantt-bar {
+    position: absolute;
+    height: 80%; /* Adjust height as needed */
+    background-color: rgba(0, 123, 255, 0.5);
+    border: 1px solid #007bff;
+    box-sizing: border-box;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none; /* Ensure tooltip doesn't interfere with mouse events */
+    display: none; /* Initially hide the tooltip */
+}
+
+@media (max-width: 600px) {
+    .gantt-date, .gantt-summary {
+        flex: 0 0 50px; /* Adjust width for date and summary columns on small screens */
+        min-width: 50px;
+    }
+
+    .gantt-time {
+        min-width: 30px; /* Adjust minimum width for time columns on small screens */
+    }
+}
